@@ -6,10 +6,9 @@ import java.util.Date;
 import java.util.List;
 
 import edu.wpi.first.wpilibj.Sendable;
-import edu.wpi.first.wpilibj.SendableBase;
 import edu.wpi.first.wpilibj.smartdashboard.SendableBuilder;
 
-public class SmartDashLog extends SendableBase implements Sendable {
+public class SmartDashLog implements Sendable {
 
 	private static final int MAX_LINES = 10;
 	private static List<String> lines = new ArrayList<String>();
