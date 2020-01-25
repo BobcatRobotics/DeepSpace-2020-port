@@ -8,12 +8,12 @@ package frc.robot;
  */
 public class RobotMap {
   // Drive  Train
-	public static int driveRightMotorFront = 1;
-	public static int driveRightMotorMiddle = 0;
-	public static int driveRightMotorRear = 2;
-	public static int driveLeftMotorFront = 5;
-	public static int driveLeftMotorMiddle = 4;
-	public static int driveLeftMotorRear = 3;
+	public static int driveRightMotorFront = 2;
+	public static int driveRightMotorMiddle = 19;
+	public static int driveRightMotorRear = 5;
+	public static int driveLeftMotorFront = 1;
+	public static int driveLeftMotorMiddle = 9;
+	public static int driveLeftMotorRear = 11;
 	
 	// Drive Train Encoders
 	public static int leftEncoderChannel1 = 2;
