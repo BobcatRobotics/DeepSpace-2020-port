@@ -52,6 +52,14 @@ public class Wrist  extends Subsystem {
     public void displayDashboard() {
         SmartDashboard.putNumber("Current Wrist State", wristState);
     }
+    public void setBothSolenoids(boolean on) {
+        solenoid1.set(on);
+        solenoid2.set(on);
+    }
+    public void setDifferentSolenoids(boolean on) {
+        solenoid1.set(on);
+        solenoid2.set(!on);
+    }
 
     @Override
 	public void initDefaultCommand() {

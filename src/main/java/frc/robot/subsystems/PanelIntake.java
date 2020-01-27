@@ -85,7 +85,15 @@ public class PanelIntake extends Subsystem {
         stop();
         RioLogger.errorLog("PanelIntake.reset()");
     }
+    public void setIn() {
 
+        solenoid1.set(true);
+    }
+
+    public void setOut() {
+
+        solenoid1.set(false);
+    }
     @Override
 	public void initDefaultCommand() {
 	  // Set the default command for a subsystem here.

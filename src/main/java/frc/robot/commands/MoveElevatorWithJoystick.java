@@ -13,10 +13,9 @@ public class MoveElevatorWithJoystick extends MoveElevator {
     @Override
     protected void execute() {
 
-        elev = OI.gamePad.getRawAxis(RobotMap.leftJoystick);
+        double elev = OI.gamePad.getRawAxis(RobotMap.leftJoystick);
         double motorSpeed = -1*elev;
         if (OI.limitOn) {
-
             if ((motorSpeed > 0.0) || (motorSpeed < 0.0)) {
                 motorSpeed = 0.0;
             }
