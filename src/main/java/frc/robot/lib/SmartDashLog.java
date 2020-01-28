@@ -9,7 +9,6 @@ import edu.wpi.first.wpilibj.Sendable;
 import edu.wpi.first.wpilibj.smartdashboard.SendableBuilder;
 
 public class SmartDashLog implements Sendable {
-
 	private static final int MAX_LINES = 10;
 	private static List<String> lines = new ArrayList<String>();
 	private int currentLine = 0;

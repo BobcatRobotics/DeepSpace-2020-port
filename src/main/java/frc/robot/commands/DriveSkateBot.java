@@ -7,10 +7,10 @@
 
 package frc.robot.commands;
 
-import frc.robot.OI;
-
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.command.Command;
+
+import frc.robot.OI;
 
 public class DriveSkateBot extends Command {
 	
@@ -38,7 +38,6 @@ public class DriveSkateBot extends Command {
 		OI.driveTrain.setRightPower(right);
 		OI.driveTrain.drive();
 	}
-
 
 	@Override
 	protected boolean isFinished() {

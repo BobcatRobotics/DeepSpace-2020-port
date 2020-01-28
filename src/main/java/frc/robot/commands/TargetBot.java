@@ -7,14 +7,13 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import frc.robot.OI;
-import frc.robot.RobotMap;
+
 import frc.robot.lib.RioLogger;
 import frc.robot.lib.RioLoggerThread;
-import frc.robot.subsystems.DriveTrain;
-import edu.wpi.first.wpilibj.Joystick;
-
+import frc.robot.OI;
+import frc.robot.RobotMap;
 
 public class TargetBot extends Command {
 	private static double DESIRED_TARGET_AREA = 4.6; // Area of the target when the robot reaches the wall
@@ -63,7 +62,7 @@ public class TargetBot extends Command {
 
 		double steerCommandSign = Math.signum(steerCommand);
 		double minSteerCommand = 0.15;
-		if(Math.abs(steerCommand) < minSteerCommand){
+		if(Math.abs(steerCommand) < minSteerCommand) {
 			steerCommand = minSteerCommand * steerCommandSign;
 		}
 
@@ -91,18 +90,18 @@ public class TargetBot extends Command {
 	protected boolean isFinished() {
 		boolean stop = false;
 		// if (isTargeting) {
-		// if (!hasValidTarget) {
-		// stop = true;
-		// }
-		// if (speedToTarget < 0.01) {
-		// stop = true;
-		// }
+		//     if (!hasValidTarget) {
+		//         stop = true;
+		//     }
+		//     if (speedToTarget < 0.01) {
+		//         stop = true;
+		//     }
 		// }
 		if (!OI.rightStick.getRawButton(RobotMap.targetBot)) {
 			stop = true;
 		}
 		// if((DESIRED_TARGET_AREA - OI.limelight.targetArea()) <= 0){
-		// stop = true;
+		//     stop = true;
 		// }
 		return stop;
 	}
@@ -112,7 +111,7 @@ public class TargetBot extends Command {
 		OI.driveTrain.stop();
 		OI.limelight.turnOffLED();
 		RioLogger.errorLog("TargetSkateBot command finished.");
-		//OI.driveTrain.setCoastMode();
+		// OI.driveTrain.setCoastMode();
 		OI.driveTrain.setVoltageComp(12);
 		initializeCommand();
 	}
@@ -124,7 +123,7 @@ public class TargetBot extends Command {
 	public void Update_Limelight_Tracking() {
 		// double drive_k = 0.13;
 		// double steer_k = 0.012;
-		// Tunning parameters
+		// Turning parameters
 
 		hasValidTarget = OI.limelight.hasTargets();
 		if (!hasValidTarget) {
@@ -164,7 +163,7 @@ public class TargetBot extends Command {
 	private void initializeCommand() {
 		ledsON = false;
 		isTargeting = false;
-		//OI.driveTrain.setBrakeMode();
+		// OI.driveTrain.setBrakeMode();
 		double voltageComp = 9;
 		OI.driveTrain.setVoltageComp(voltageComp);
 	}

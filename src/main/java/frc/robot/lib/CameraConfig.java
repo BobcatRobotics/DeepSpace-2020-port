@@ -9,7 +9,6 @@ public class CameraConfig  {
     private String cameraConfig;
     private String streamConfig;
 
-
     public int getTeam() {
         return this.team;
     }

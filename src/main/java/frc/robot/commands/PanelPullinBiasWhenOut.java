@@ -27,9 +27,8 @@ public class PanelPullinBiasWhenOut extends Command {
     protected boolean isFinished() {
         if (!OI.panel.panelIntakeIsOut()) {
             return true;
-        } else {
-            return false;
         }
+        return false;
     }
 
     @Override

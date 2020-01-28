@@ -1,11 +1,12 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+
 import frc.robot.OI;
 
 public class WristStowed extends Command {
-    boolean toggle = false;
-    CargoRollerInWrist cargoRollerInWrist;
+    private boolean toggle = false;
+    private CargoRollerInWrist cargoRollerInWrist;
 
     public WristStowed() {
         super();

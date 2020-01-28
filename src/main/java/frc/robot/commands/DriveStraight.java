@@ -6,9 +6,10 @@
 /*----------------------------------------------------------------------------*/
 package frc.robot.commands;
 
-import frc.robot.OI;
-import frc.robot.lib.RioLogger;
 import edu.wpi.first.wpilibj.command.Command;
+
+import frc.robot.lib.RioLogger;
+import frc.robot.OI;
 
 public class DriveStraight extends Command {
 	private static double DRIVE_SPEED = 0.35;

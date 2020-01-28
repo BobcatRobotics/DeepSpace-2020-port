@@ -1,11 +1,12 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+
 import frc.robot.OI;
 
 public class WristDeliever extends Command {
-    boolean toggle = false;
-    CargoRollerInWrist cargoRollerInWrist;
+    private boolean toggle = false;
+    private CargoRollerInWrist cargoRollerInWrist;
 
     public WristDeliever() {
         super();
@@ -23,7 +24,7 @@ public class WristDeliever extends Command {
     }
 
     @Override
-    protected void execute () {
+    protected void execute() {
     }
 
     @Override

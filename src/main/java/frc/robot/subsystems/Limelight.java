@@ -7,13 +7,12 @@
 
 package frc.robot.subsystems;
 
-import edu.wpi.first.wpilibj.command.Subsystem;
-import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
-import edu.wpi.first.wpilibj.shuffleboard.ShuffleboardTab;
-import frc.robot.lib.RioLogger;
 import edu.wpi.first.networktables.NetworkTable;
 import edu.wpi.first.networktables.NetworkTableEntry;
 import edu.wpi.first.networktables.NetworkTableInstance;
+import edu.wpi.first.wpilibj.command.Subsystem;
+
+import frc.robot.lib.RioLogger;
 
 /**
  * Add your docs here.
@@ -26,7 +25,6 @@ public class Limelight extends Subsystem {
     private NetworkTableEntry ta = null;
     private NetworkTableEntry ta0 = null;
     private NetworkTableEntry ta1 = null;
-
 
     public Limelight() {
     }
@@ -105,8 +103,7 @@ public class Limelight extends Subsystem {
      }
 
      public void turnOffLED() {
-        lightLED(LimelightLED.OFF);
-          
+        lightLED(LimelightLED.OFF); 
      }
      
      private void lightLED( LimelightLED value) {

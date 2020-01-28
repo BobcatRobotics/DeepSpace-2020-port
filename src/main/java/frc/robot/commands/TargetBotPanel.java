@@ -5,10 +5,11 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
 import edu.wpi.first.wpilibj.shuffleboard.ShuffleboardTab;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import frc.robot.OI;
-import frc.robot.RobotMap;
+
 import frc.robot.lib.RioLogger;
 import frc.robot.lib.RioLoggerThread;
+import frc.robot.OI;
+import frc.robot.RobotMap;
 
 public class TargetBotPanel extends Command {
     private ShuffleboardTab tab = Shuffleboard.getTab("TargetTuning");
@@ -67,10 +68,10 @@ public class TargetBotPanel extends Command {
 		double steerAdjustLeft = 0.0;
 		double steerAdjustRight = -0.18;
 		// if(leftTarget > rightTarget){
-		// 	steerAdjustLeft = 0.15;
+		// 	   steerAdjustLeft = 0.15;
 		// }
 		// if (rightTarget > leftTarget){
-		// 	steerAdjustRight = 0.15;
+		// 	   steerAdjustRight = 0.15;
 		// }
 
 		double leftPwr = (driveCommand + steerCommand + steerAdjustLeft) * -1.0;
@@ -92,18 +93,18 @@ public class TargetBotPanel extends Command {
 	protected boolean isFinished() {
 		boolean stop = false;
 		// if (isTargeting) {
-		// if (!hasValidTarget) {
-		// stop = true;
-		// }
-		// if (speedToTarget < 0.01) {
-		// stop = true;
-		// }
+		//     if (!hasValidTarget) {
+		//         stop = true;
+		//     }
+		//     if (speedToTarget < 0.01) {
+		//         stop = true;
+		//     }
 		// }
 		if (!OI.rightStick.getRawButton(RobotMap.targetBot)) {
 			stop = true;
 		}
 		// if((DESIRED_TARGET_AREA - OI.limelight.targetArea()) <= 0){
-		// 	stop = true;
+		// 	   stop = true;
 		// }
 		return stop;
 	}
@@ -121,9 +122,9 @@ public class TargetBotPanel extends Command {
 	 * commands based on the tracking data from a limelight camera.
 	 */
 	public void Update_Limelight_Tracking() {
-		//double drive_k = 0.13;
-		//double steer_k = 0.012;
-		//Tunning parameters
+		// double drive_k = 0.13;
+		// double steer_k = 0.012;
+		// Turning parameters
 
 		hasValidTarget = OI.limelight.hasTargets();
 		if (!hasValidTarget) {
@@ -138,10 +139,9 @@ public class TargetBotPanel extends Command {
 		log.ta = ta;
 
 		// Start with proportional steering
-
 		steerCommand = (tx - X_OFFSET) * STEER_K;
 		SmartDashboard.putNumber("Limelight.SteerCommand", steerCommand);
-		if( DESIRED_TARGET_AREA - ta < 1){
+		if ((DESIRED_TARGET_AREA - ta) < 1) {
 			steerCommand = 0.0;
 		}
 		// try to drive forward until the target area reaches our desired area

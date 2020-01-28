@@ -7,7 +7,7 @@ package frc.robot;
  * floating around.
  */
 public class RobotMap {
-    // Motor controller assignments
+	// Motor controller assignments
 	public static int driveRightMotorFront = 0;
 	public static int driveRightMotorMiddle = 1;
 	public static int driveRightMotorRear = 2;
@@ -23,7 +23,6 @@ public class RobotMap {
 	public static int elevMotor1 = 10;   // Elevator motor 1 has the sensor attached
 	public static int elevMotor2 = 11;	
 	public static int elevMotor3 = 12;
-
 
 	// Elevator Limit switches DIO channels
 	public static int elevLSwitchT = 1;

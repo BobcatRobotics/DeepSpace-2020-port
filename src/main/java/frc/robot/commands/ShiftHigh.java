@@ -1,10 +1,11 @@
 package frc.robot.commands;
 
-import frc.robot.OI;
 import edu.wpi.first.wpilibj.command.Command;
 
+import frc.robot.OI;
+
 public class ShiftHigh extends Command {
-    boolean shifterState = true;
+    private boolean shifterState = true;
 
     public ShiftHigh() {
         super();

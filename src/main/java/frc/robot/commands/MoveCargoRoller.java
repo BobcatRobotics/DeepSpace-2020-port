@@ -1,6 +1,7 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+
 import frc.robot.OI;
 
 public class MoveCargoRoller extends Command {
@@ -12,11 +13,9 @@ public class MoveCargoRoller extends Command {
     @Override
     protected void execute() {
         if (OI.gamePad.getRawButton(6)) {
-
             OI.cargo.intake();
         }
         if (OI.gamePad.getRawButton(8)) {
-
             OI.cargo.deposit();
         }
     }

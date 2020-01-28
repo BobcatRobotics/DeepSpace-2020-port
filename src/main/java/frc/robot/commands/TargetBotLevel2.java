@@ -8,10 +8,11 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import frc.robot.OI;
-import frc.robot.RobotMap;
+
 import frc.robot.lib.RioLogger;
 import frc.robot.lib.RioLoggerThread;
+import frc.robot.OI;
+import frc.robot.RobotMap;
 
 public class TargetBotLevel2 extends Command {
 	private static double DESIRED_TARGET_AREA = 4.8; // Area of the target when the robot reaches the wall
@@ -81,8 +82,9 @@ public class TargetBotLevel2 extends Command {
 		if (mode == TargetMode.DRIVE) {
 			OI.driveTrain.drive(0.2, 0.2); // Drive Straight
 			timeCounter++;
-			if (timeCounter > TIME_COUNT_LOOP)
+			if (timeCounter > TIME_COUNT_LOOP) {
 				mode = TargetMode.END;
+			}
 		}
 		RioLoggerThread.log(log.logLine());
 	}
@@ -97,7 +99,7 @@ public class TargetBotLevel2 extends Command {
 			stop = true;
 		}
 		// if((DESIRED_TARGET_AREA - OI.limelight.targetArea()) <= 0){
-		// 	stop = true;
+		//     stop = true;
 		// }
 		return stop;
 	}
@@ -115,9 +117,9 @@ public class TargetBotLevel2 extends Command {
 	 * commands based on the tracking data from a limelight camera.
 	 */
 	public void Update_Limelight_Tracking() {
-		//double drive_k = 0.13;
-		//double steer_k = 0.012;
-		//Tunning parameters
+		// double drive_k = 0.13;
+		// double steer_k = 0.012;
+		// Turning parameters
 
 		hasValidTarget = OI.limelight.hasTargets();
 		if (!hasValidTarget) {
@@ -131,10 +133,9 @@ public class TargetBotLevel2 extends Command {
 		log.ta = ta;
 
 		// Start with proportional steering
-
 		steerCommand = (tx - X_OFFSET) * STEER_K;
 		SmartDashboard.putNumber("Limelight.SteerCommand", steerCommand);
-		if( DESIRED_TARGET_AREA - ta < 1){
+		if ((DESIRED_TARGET_AREA - ta) < 1){
 			steerCommand = 0.0;
 		}
 		// try to drive forward until the target area reaches our desired area

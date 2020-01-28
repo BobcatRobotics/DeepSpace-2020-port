@@ -3,8 +3,9 @@ package frc.robot.subsystems;
 import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
-import frc.robot.RobotMap;
+
 import frc.robot.lib.RioLogger;
+import frc.robot.RobotMap;
 
 public class CargoRoller extends Subsystem {
     private WPI_VictorSPX cargoMotor;

@@ -1,8 +1,9 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
-import frc.robot.OI;
+
 import frc.robot.lib.RioLogger;
+import frc.robot.OI;
 
 public class LockEnable extends Command {
 
@@ -12,7 +13,7 @@ public class LockEnable extends Command {
     }
 
     @Override
-    protected void initialize(){
+    protected void initialize() {
     }
 
     @Override

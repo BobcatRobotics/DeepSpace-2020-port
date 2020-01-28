@@ -1,15 +1,15 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+
 import frc.robot.OI;
 
 public class RunWrist extends Command {
-    boolean toggle = false;
+    private boolean toggle = false;
 
     public RunWrist() {
 		super();
     }
-    
     
     @Override
     protected void execute () {

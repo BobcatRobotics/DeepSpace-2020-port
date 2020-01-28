@@ -1,12 +1,13 @@
 package frc.robot.subsystems;
 
-import edu.wpi.first.wpilibj.Solenoid;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.command.Subsystem;
-import frc.robot.RobotMap;
-import frc.robot.lib.RioLogger;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import edu.wpi.first.wpilibj.Solenoid;
 
-public class Wrist  extends Subsystem {
+import frc.robot.lib.RioLogger;
+import frc.robot.RobotMap;
+
+public class Wrist extends Subsystem {
     public static int wristState = 0; // 0=Stowed position, 1=Deliver position, 2=Deployed position
     public static Solenoid solenoid1 = new Solenoid(RobotMap.wristSolenoid1);
     public static Solenoid solenoid2 = new Solenoid(RobotMap.wristSolenoid2);

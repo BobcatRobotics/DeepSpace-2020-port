@@ -5,9 +5,10 @@
 /*----------------------------------------------------------------------------*/
 package frc.robot;
 
-import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
+import edu.wpi.first.wpilibj.TimedRobot;
+
 import frc.robot.commands.DriveWithJoysticks;
 import frc.robot.commands.MoveElevator;
 import frc.robot.commands.PanelIntakeOut;
@@ -22,12 +23,12 @@ import frc.robot.lib.RioLoggerThread;
  * project.
  */
 public class Robot extends TimedRobot {
-  PanelIntakeOut panelIntakeOut;
-  ShiftHigh shiftHigh;
-  static OI oi = new OI();
-  static boolean commandsStarted = false;
-  static boolean loggerInit = false;
-  static boolean wasInAutoPeriodic = false;
+  private PanelIntakeOut panelIntakeOut;
+  private ShiftHigh shiftHigh;
+  private static OI oi = new OI();
+  private static boolean commandsStarted = false;
+  private static boolean loggerInit = false;
+  private static boolean wasInAutoPeriodic = false;
   // Thread m_visionThread;
 
   // Command m_autonomousCommand;

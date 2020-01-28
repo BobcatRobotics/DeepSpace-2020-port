@@ -1,11 +1,12 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
-import frc.robot.OI;
+
 import frc.robot.lib.RioLogger;
+import frc.robot.OI;
 
 public class PanelIntakeOut extends Command {
-    PanelPullInOnToggle panelPullInOnToggle;
+    private PanelPullInOnToggle panelPullInOnToggle;
 
     public PanelIntakeOut() {
         super();
@@ -15,8 +16,8 @@ public class PanelIntakeOut extends Command {
 
     @Override
     protected void initialize() {
-            panelPullInOnToggle = new PanelPullInOnToggle();
-            panelPullInOnToggle.start();
+        panelPullInOnToggle = new PanelPullInOnToggle();
+        panelPullInOnToggle.start();
     }
 
     @Override

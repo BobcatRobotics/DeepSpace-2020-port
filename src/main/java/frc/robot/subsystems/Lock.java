@@ -1,15 +1,16 @@
 package frc.robot.subsystems;
 
-import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.command.Subsystem;
-import frc.robot.RobotMap;
+import edu.wpi.first.wpilibj.Solenoid;
+
 import frc.robot.lib.RioLogger;
+import frc.robot.RobotMap;
 
 public class Lock extends Subsystem {
-    //public static Solenoid solenoid1 = new Solenoid(RobotMap.panelSolenoid);
+    // public static Solenoid solenoid1 = new Solenoid(RobotMap.panelSolenoid);
     private Solenoid solenoid1;
     private boolean lockStateToggle;
-    private boolean lockState=false;
+    private boolean lockState = false;
 
     public Lock() {
         solenoid1 = new Solenoid(RobotMap.wristLockSol);
@@ -20,12 +21,11 @@ public class Lock extends Subsystem {
         lockStateToggle = !lockStateToggle;
         solenoid1.set(false);
         lockState=true;
-
     }
 
     public void disable() {
         solenoid1.set(true);
-        lockState=false;
+        lockState = false;
     }
 
     public boolean isLocked() {

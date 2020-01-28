@@ -1,10 +1,12 @@
 package frc.robot.subsystems;
 
-import com.ctre.phoenix.motorcontrol.NeutralMode;
 import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
+import com.ctre.phoenix.motorcontrol.NeutralMode;
+
 import edu.wpi.first.wpilibj.command.Subsystem;
-import frc.robot.RobotMap;
+
 import frc.robot.lib.RioLogger;
+import frc.robot.RobotMap;
 
 public class DriveTrain extends Subsystem {
 	/** Inverts drive direction **/
@@ -61,12 +63,13 @@ public class DriveTrain extends Subsystem {
 	}
 
 	public void setLeftPower(double leftPwr) {
-		if (leftPwr > 1.0)
+		if (leftPwr > 1.0) {
 			leftPwr = 1.0;
-		else
-		if (leftPwr < -1.0)
+		} else if (leftPwr < -1.0) {
 			leftPwr = -1.0;
-			//was leftPwr = 1.0, we thought it should be -1.0
+			// was leftPwr = 1.0, we thought it should be -1.0
+		}
+
 		this.leftPower = leftPwr;
 	}
 
@@ -75,24 +78,26 @@ public class DriveTrain extends Subsystem {
 	}
 
 	public void setRightPower(double rightPwr) {
-		if (rightPwr > 1.0)
+		if (rightPwr > 1.0) {
 			rightPwr = 1.0;
-		else
-		if (rightPwr < -1.0)
+		} else if (rightPwr < -1.0) {
 			rightPwr = -1.0;
-			//was rightPwr = 1.0, we thought it should be -1.0
+			// was rightPwr = 1.0, we thought it should be -1.0
+		}
+
 		this.rightPower = rightPwr;
 	}
 
 	public void drive() {
-		drive(leftPower,rightPower);
+		drive(leftPower, rightPower);
 	}
 	
 	public void drive(double leftPwr, double rightPwr) {
-		if (invertLeft)
+		if (invertLeft) {
 			leftPwr *= INVERT_MOTOR;
-		else
+		} else {
 			rightPwr *= INVERT_MOTOR;
+		}
 		
 		leftFront.set(leftPwr);
 		leftMiddle.set(leftPwr);

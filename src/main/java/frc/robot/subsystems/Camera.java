@@ -1,20 +1,14 @@
 package frc.robot.subsystems;
 
-import edu.wpi.cscore.MjpegServer;
 import edu.wpi.cscore.UsbCamera;
 import edu.wpi.cscore.VideoMode;
-import edu.wpi.cscore.VideoSource;
 import edu.wpi.first.cameraserver.CameraServer;
 import edu.wpi.first.wpilibj.command.Subsystem;
-import frc.robot.lib.CameraConfig;
-import frc.robot.lib.CameraFileReader;
-import frc.robot.lib.RioLogger;
 
 /**
  * Camera Subsystem. Allows camera to be initialized from JSON file
  */
 public class Camera extends Subsystem {
-   
 
     public Camera() {
     }
@@ -24,7 +18,6 @@ public class Camera extends Subsystem {
         camera.setResolution(320,240);
         camera.setFPS(30);
         
-
         // CameraServer inst = CameraServer.getInstance();
         // CameraFileReader camReader = new CameraFileReader();
         

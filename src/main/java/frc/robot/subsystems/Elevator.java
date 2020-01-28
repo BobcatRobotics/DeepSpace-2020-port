@@ -2,18 +2,17 @@ package frc.robot.subsystems;
 
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 import com.ctre.phoenix.motorcontrol.ControlMode;
-import com.ctre.phoenix.motorcontrol.DemandType;
 import com.ctre.phoenix.motorcontrol.FeedbackDevice;
 import com.ctre.phoenix.motorcontrol.NeutralMode;
 
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.networktables.NetworkTableEntry;
-import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.shuffleboard.*;
-import frc.robot.RobotMap;
-import frc.robot.lib.RioLogger;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
+import frc.robot.lib.RioLogger;
+import frc.robot.RobotMap;
 
 public class Elevator extends Subsystem {
     private double elevBiasDefault = -0.06;  // Competition was -0.04 at Waterbury
@@ -93,7 +92,6 @@ public class Elevator extends Subsystem {
         elevatorMotor1.configAllowableClosedloopError(0, 100); // Within +/-100 native units, is close enough (.3 inches)
         elevatorMotor1.config_IntegralZone(0, 1500);  // Only allow integral action with +/- 3 inches
 
-
         // Call reset, and log elevator creation
         reset();
         RioLogger.errorLog("Elevator() created.");
@@ -145,10 +143,10 @@ public class Elevator extends Subsystem {
         getElevatorDistance();
         getElevatorVelocity();
         elevatorMotor1.set(ControlMode.MotionMagic, elevLowPosition);
-        if(!limitsDisabled && lowerLimit()){
+        if(!limitsDisabled && lowerLimit()) {
             elevatorMotor1.set(ControlMode.PercentOutput, elevatorCmd);
         }
-        //elevatorMotor1.set(ControlMode.MotionMagic, elevLowPosition, DemandType.ArbitraryFeedForward, elevBias);
+        // elevatorMotor1.set(ControlMode.MotionMagic, elevLowPosition, DemandType.ArbitraryFeedForward, elevBias);
         elevCtrlMode.setDouble(1.0);
     }
 
@@ -157,7 +155,7 @@ public class Elevator extends Subsystem {
         getElevatorDistance();
         getElevatorVelocity();
         elevatorMotor1.set(ControlMode.MotionMagic, elevMidPosition);
-        //elevatorMotor1.set(ControlMode.MotionMagic, elevMidPosition, DemandType.ArbitraryFeedForward, elevBias);
+        // elevatorMotor1.set(ControlMode.MotionMagic, elevMidPosition, DemandType.ArbitraryFeedForward, elevBias);
         elevCtrlMode.setDouble(2.0);
     }
 
@@ -166,27 +164,24 @@ public class Elevator extends Subsystem {
         getElevatorDistance();
         getElevatorVelocity();
         elevatorMotor1.set(ControlMode.MotionMagic, elevHighPosition);
-        //elevatorMotor1.set(ControlMode.MotionMagic, elevHighPosition, DemandType.ArbitraryFeedForward, elevBias);
+        // elevatorMotor1.set(ControlMode.MotionMagic, elevHighPosition, DemandType.ArbitraryFeedForward, elevBias);
         elevCtrlMode.setDouble(3.0);
     }
 
     public double getElevatorDistance() {
-        
         if (!isLimDisable() && lowerLimit()) {
-
             elevatorMotor1.setSelectedSensorPosition(0, 0, 0);
         }
         // Since the encoder sensor phase is flipped to support
         // using the SRX motion magic etc., flip the result here
         // so the rest of the code continues to thing of the
         // distance increasing as the elevator goes up
-        elevatorDistance = -1.0*elevatorMotor1.getSelectedSensorPosition(0);
+        elevatorDistance = -1.0 * elevatorMotor1.getSelectedSensorPosition(0);
         elevDist.setDouble(elevatorDistance);
         return elevatorDistance;
     }
 
     public double getElevatorVelocity() {
-       
         elevatorVelocity = elevatorMotor1.getSelectedSensorVelocity(0);
         elevVel.setDouble(elevatorVelocity);
         return elevatorVelocity;
@@ -229,6 +224,7 @@ public class Elevator extends Subsystem {
         } else {
            limitsDisabled = false;
         }
+
         elevLimState.setBoolean(!limitsDisabled);
         return limitsDisabled;
     }
@@ -256,9 +252,8 @@ public class Elevator extends Subsystem {
             return 1;
         } else if (lowerLimit()) {
             return -1;
-        } else {
-            return 0;
         }
+        return 0;
     }
 
     public void setElevBrakeMode() {

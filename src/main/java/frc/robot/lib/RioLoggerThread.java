@@ -24,7 +24,6 @@ public class RioLoggerThread {
 	private static double endTime = 0.0;
 	private static boolean isLogging = false;
 
-	
 	static {
 		path =  File.separator + "home" + File.separator + "lvuser" + File.separator + "logs" + File.separator;
 		logName = path + new SimpleDateFormat(dateFmt).format(new Date());
@@ -49,11 +48,8 @@ public class RioLoggerThread {
 			//RioLogger.log(String.format("RioLoggerThread.LogThread run() ending current time, end time %18d, %18.0f ",System.currentTimeMillis(), endTime));
 		}
 	}
-
 	
-	/**
-	 * Returns the one and only one instance of RioLoggerThread
-	 */
+	// Returns the one and only one instance of RioLoggerThread
 	public static RioLoggerThread getInstance() {
 		return instance;
 	}
@@ -71,7 +67,7 @@ public class RioLoggerThread {
 		logFrequency = totFreq;
 		
 		loggerThread = new Thread(new LogThread());
-		//logThread.setPriority((Thread.NORM_PRIORITY + Thread.MAX_PRIORITY) / 2);
+		// logThread.setPriority((Thread.NORM_PRIORITY + Thread.MAX_PRIORITY) / 2);
 		loggerThread.start();
 	}
 
@@ -82,7 +78,7 @@ public class RioLoggerThread {
 			try {
 					Thread.sleep(logFrequency * 1000L); // sleep() in milliseconds
 			} catch (InterruptedException e) {
-				/* The thread can be interrupted by a request to write the logs */
+				// The thread can be interrupted by a request to write the logs
 				RioLogger.log("RioLoggerThread startLogging() interrupted. Processing logs.");
 			}
 			if (logs.size() > 0) {
@@ -91,9 +87,9 @@ public class RioLoggerThread {
 				writeLog(tempLog);
 			} 
 			cTime = Timer.getFPGATimestamp();
-			//cTime = System.currentTimeMillis();
+			// cTime = System.currentTimeMillis();
 		} while (isLogging && (cTime < endTime));
-		//cTime = System.currentTimeMillis();
+		// cTime = System.currentTimeMillis();
 		cTime = Timer.getFPGATimestamp();
 		writeLog(logs);
 		logs.clear();
@@ -113,8 +109,8 @@ public class RioLoggerThread {
 		return isLogging;
 	}
 
-	/* This method will interrupt the current thread */
-	/* write the log and then resume                 */
+	// This method will interrupt the current thread
+	// write the log and then resume     
 	public static void writeLog() {
 		loggerThread.interrupt();
 	}
