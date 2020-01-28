@@ -5,7 +5,7 @@ import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.OI;
 
 public class WristDeliever extends Command {
-    private boolean toggle = false;
+    boolean toggle = false;
     private CargoRollerInWrist cargoRollerInWrist;
 
     public WristDeliever() {

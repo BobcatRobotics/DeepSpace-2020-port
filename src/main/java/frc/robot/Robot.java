@@ -25,7 +25,6 @@ import frc.robot.lib.RioLoggerThread;
 public class Robot extends TimedRobot {
   private PanelIntakeOut panelIntakeOut;
   private ShiftHigh shiftHigh;
-  private static OI oi = new OI();
   private static boolean commandsStarted = false;
   private static boolean loggerInit = false;
   private static boolean wasInAutoPeriodic = false;
