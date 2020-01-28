@@ -6,18 +6,15 @@ import frc.robot.OI;
 public class MoveCargoRoller extends Command {
 
     public MoveCargoRoller() {
-
         super();
     }
 
     @Override
     protected void execute() {
-
         if (OI.gamePad.getRawButton(6)) {
 
             OI.cargo.intake();
         }
-
         if (OI.gamePad.getRawButton(8)) {
 
             OI.cargo.deposit();
@@ -26,7 +23,6 @@ public class MoveCargoRoller extends Command {
 
     @Override
     protected boolean isFinished() {
-
         return false;
     }
 }

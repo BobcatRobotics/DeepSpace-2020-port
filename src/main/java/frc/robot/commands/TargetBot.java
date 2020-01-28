@@ -59,9 +59,6 @@ public class TargetBot extends Command {
 		double minLeftPwr = 0.06;
 		double minRightPwr = 0.06; // -0.18
 
-	
-		
-
 		driveCommand = OI.leftStick.getRawAxis(Joystick.AxisType.kY.value) * -1.0;
 
 		double steerCommandSign = Math.signum(steerCommand);
@@ -74,14 +71,9 @@ public class TargetBot extends Command {
 
 		double leftBias = driveSign * 0.00;
 		double rightBias = driveSign * 0.05;
-		
-
 
 		double leftPwr = (driveCommand + steerCommand  + leftBias) * -1.0;
 		double rightPwr = (driveCommand - steerCommand + rightBias ) * -1.0;
-
-	
-
 
 		OI.driveTrain.setLeftPower(leftPwr);
 		OI.driveTrain.setRightPower(rightPwr);
@@ -189,5 +181,4 @@ public class TargetBot extends Command {
 			return String.format("%6.4f %6.4f %6.4f %6.4f %6.4f %6.4f", ta, tx, drvCmd, strCmd, leftPwr, rightPwr);
 		}
 	}
-
 }

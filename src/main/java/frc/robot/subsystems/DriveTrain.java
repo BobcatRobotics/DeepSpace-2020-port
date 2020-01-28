@@ -143,8 +143,6 @@ public class DriveTrain extends Subsystem {
 		rightFront.configVoltageCompSaturation(voltageComp);
 		rightMiddle.configVoltageCompSaturation(voltageComp);
 		rightRear.configVoltageCompSaturation(voltageComp);
-
-
 	}
 
 	@Override

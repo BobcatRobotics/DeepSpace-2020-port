@@ -83,6 +83,7 @@ public class Limelight extends Subsystem {
         }
         return dArea;
      }
+
      public double rightTarget() {
         double dArea = 0.0;
         if (isInitialized()) {
@@ -90,6 +91,7 @@ public class Limelight extends Subsystem {
         }
         return dArea;
      }
+
      public double leftTarget() {
         double dArea = 0.0;
         if (isInitialized()) {
@@ -106,6 +108,7 @@ public class Limelight extends Subsystem {
         lightLED(LimelightLED.OFF);
           
      }
+     
      private void lightLED( LimelightLED value) {
         NetworkTable table = NetworkTableInstance.getDefault().getTable("limelight");
         table.getEntry("ledMode").setNumber(value.ordinal());

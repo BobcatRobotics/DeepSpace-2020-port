@@ -12,12 +12,10 @@ public class MovePanelIntake extends Command {
 
     @Override
     protected void execute() {
-
         if (OI.gamePad.getRawButton(5)) {
 
             OI.panel.setIn();
         }
-
         if (OI.gamePad.getRawButton(8)) {
 
             OI.panel.setOut();
@@ -26,7 +24,6 @@ public class MovePanelIntake extends Command {
 
     @Override
     protected boolean isFinished() {
-
         return false;
     }
 

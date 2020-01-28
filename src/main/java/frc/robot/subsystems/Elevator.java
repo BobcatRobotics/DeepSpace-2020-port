@@ -224,7 +224,6 @@ public class Elevator extends Subsystem {
     }
 
     public boolean isLimDisable() {
-
         if (elevLimitDisable.getBoolean(elevLimDisDef) || limitsDisableButtonActivated) {
            limitsDisabled = true;
         } else {
@@ -237,12 +236,15 @@ public class Elevator extends Subsystem {
     public void setLmitDisableStatusTrue() {
         limitsDisableButtonActivated = true;
     }
+
     public void setLmitDisableStatusFalse() {
         limitsDisableButtonActivated = false;
     }
+
     public void setLmitDisableStatusToggle() {
         limitsDisableButtonActivated = !limitsDisableButtonActivated;
     }
+    
     public boolean getElevLimitStatus() {
         isLimDisable();
         elevLimState.setBoolean(!limitsDisabled);

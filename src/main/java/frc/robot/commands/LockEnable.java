@@ -13,7 +13,6 @@ public class LockEnable extends Command {
 
     @Override
     protected void initialize(){
-       
     }
 
     @Override

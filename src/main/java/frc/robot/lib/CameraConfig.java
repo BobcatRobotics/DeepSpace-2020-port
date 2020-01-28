@@ -55,7 +55,6 @@ public class CameraConfig  {
     }
 
     public String getStreamConfig() {
-
         return this.streamConfig;
     }
 
@@ -63,7 +62,6 @@ public class CameraConfig  {
         this.streamConfig = streamConfig;
     }
 
-   
     @Override
     public String toString() {
         return "{" +

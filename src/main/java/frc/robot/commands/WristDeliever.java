@@ -30,6 +30,4 @@ public class WristDeliever extends Command {
 	protected boolean isFinished() {
 		return true;
 	}
-
-
 }

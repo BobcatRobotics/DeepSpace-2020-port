@@ -76,9 +76,9 @@ public class OI {
 
   static {
     // Start Logging Thread
-    // logFile = RioLoggerThread.getInstance();
+    logFile = RioLoggerThread.getInstance();
     // Initialize Camera
-    //camera.initializeCamera();
+    camera.initializeCamera();
     limelight.initializeLimeLight();
     RioLogger.errorLog("limeLight camera is initialized.");
 
@@ -86,8 +86,8 @@ public class OI {
     trigShifter.whenInactive(new ShiftLow());
     btnRollerIn.whileHeld(new CargoRollerIn());
     btnRollerOut.whileHeld(new CargoRollerOut());
-    //btnPanelHold.whenPressed(new PanelIntakeHoldPanel());
-    //btnPanelRelease.whenPressed(new PanelIntakeReleasePanel());
+    btnPanelHold.whenPressed(new PanelIntakeHoldPanel());
+    btnPanelRelease.whenPressed(new PanelIntakeReleasePanel());
     btnPanelHold.whileHeld(new PanelPullIn());
     btnPanelRelease.whileHeld(new PanelPushOut());
     btnWristStow.whenPressed(new WristStowed());

@@ -72,9 +72,6 @@ public class TargetBotPanel extends Command {
 		// if (rightTarget > leftTarget){
 		// 	steerAdjustRight = 0.15;
 		// }
-	
-
-
 
 		double leftPwr = (driveCommand + steerCommand + steerAdjustLeft) * -1.0;
 		double rightPwr = (driveCommand - steerCommand - steerAdjustRight) * -1.0;
@@ -178,5 +175,4 @@ public class TargetBotPanel extends Command {
             return "===========================================================";
         }
 	}
-   
 }

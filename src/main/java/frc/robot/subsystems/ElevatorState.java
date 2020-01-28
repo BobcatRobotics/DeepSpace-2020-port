@@ -13,7 +13,6 @@ public enum ElevatorState {
     }
 
     public int getPosition() {
-
         return position;
     }
 }

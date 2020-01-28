@@ -79,12 +79,14 @@ public class PanelIntake extends Subsystem {
     public double getCurrentSpeed() {
         return panelSpeed;
     }
+
     public void reset() {
         holdPanel();
         panelInOutSetToIn();
         stop();
         RioLogger.errorLog("PanelIntake.reset()");
     }
+
     public void setIn() {
 
         solenoid1.set(true);
@@ -94,6 +96,7 @@ public class PanelIntake extends Subsystem {
 
         solenoid1.set(false);
     }
+    
     @Override
 	public void initDefaultCommand() {
 	  // Set the default command for a subsystem here.
