@@ -5,7 +5,7 @@ import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.OI;
 
 public class ShiftHigh extends Command {
-    private boolean shifterState = true;
+    boolean shifterState = true;
 
     public ShiftHigh() {
         super();
