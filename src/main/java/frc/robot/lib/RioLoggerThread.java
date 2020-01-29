@@ -49,7 +49,9 @@ public class RioLoggerThread {
 		}
 	}
 	
-	/** Returns the one and only one instance of RioLoggerThread */
+	/**
+	 * Returns the one and only one instance of RioLoggerThread
+	 */
 	public static RioLoggerThread getInstance() {
 		return instance;
 	}
