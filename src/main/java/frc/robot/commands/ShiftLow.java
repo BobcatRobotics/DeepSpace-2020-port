@@ -5,7 +5,7 @@ import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.OI;
 
 public class ShiftLow extends Command {
-    private boolean shifterState = false;
+    boolean shifterState = false;
 
     public ShiftLow() {
         super();
